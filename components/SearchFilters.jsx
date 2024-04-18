@@ -20,7 +20,9 @@ const SearchFilters = () => {
         const values = getFilterValues(filterValues);
 
         values.forEach((item) => {
-            query[item.name] = item.value
+            if(item.value && filterValues?.[item.name]){
+                query[item.name] = item.value
+            }
         })
 
         router.push({ pathname: path, query })
@@ -33,7 +35,7 @@ const SearchFilters = () => {
                     <Select 
                         placeholder={filter.placeholder}
                         width="fit-content"
-                        p=""
+                        p="2"
                         onChange={(e) => searchProperties({ [filter.queryName] : e.target.value})}
                     >
                         {filter?.items?.map((item) => (
