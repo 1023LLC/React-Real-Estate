@@ -32,8 +32,7 @@ const Navbar = () => {
                         <Link href="/search?purpose=for-rent" passHref>
                             <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
                         </Link>
-                    </MenuList>
-                    
+                    </MenuList>  
                 </Menu>
             </Box>
         </Flex>
